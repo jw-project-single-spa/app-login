@@ -1,22 +1,12 @@
-export default function Root(props: {
-  name: string;
-  firebaseLibApp: typeof import("firebase/app");
-  firebaseLibAuth: typeof import("firebase/auth");
-  firebaseLibFirestore: typeof import("firebase/firestore");
-}) {
-  const {
-    firebaseLibApp: { getApp },
-    firebaseLibAuth: { signInWithRedirect, getAuth, GoogleAuthProvider },
-  } = props;
+import { loginWithRedirect } from "@jw-project/api";
 
-  const redirect = () => {
-    signInWithRedirect(getAuth(getApp()), new GoogleAuthProvider());
-  };
+export default function Root(props: { name: string }) {
+  const {} = props;
 
   return (
     <section>
       {props.name} is mounted! App login aquis
-      <button onClick={redirect}>logar</button>
+      <button onClick={loginWithRedirect}>logar</button>
     </section>
   );
 }
