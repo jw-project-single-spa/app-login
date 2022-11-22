@@ -10,6 +10,17 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    externals: ["@mui/material", "@emotion", "rxjs"],
+    externals: [
+      "@jw-project/api",
+      "@mui/material",
+      "@emotion/react",
+      "@emotion/styled",
+      "jotai",
+      "moment",
+      "react-hook-form",
+      "@hookform/resolvers/zod",
+      "zod",
+      "rxjs",
+    ],
   });
 };
